@@ -14,6 +14,10 @@ enum TrafficLightColors {
 }
 
 struct TrafficLightView: View {
+    
+    private let lightIsOn = 1.0
+    private let lightIsOff = 0.5
+    
     @State private var redColor = ColorCircle(color: .red, opacity: 0.5)
     @State private var yellowColor = ColorCircle(color: .yellow, opacity: 0.5)
     @State private var greenColor = ColorCircle(color: .green, opacity: 0.5)
@@ -21,8 +25,7 @@ struct TrafficLightView: View {
     @State private var buttonText = "START"
     
     @State private var brightLight = TrafficLightColors.red
-    private let lightIsOn = 1.0
-    private let lightIsOff = 0.5
+
     
     var body: some View {
         ZStack {
@@ -34,6 +37,7 @@ struct TrafficLightView: View {
                 greenColor
                 Spacer()
                 startButton
+                
             }
             .padding(.top, 10)
         }
@@ -50,14 +54,13 @@ struct TrafficLightView: View {
         .foregroundColor(.black)
         .font(.system(size: 30))
         .padding(.bottom, 40)
-    
-}
+        
+    }
     //MARK: - Private Methods
     private func changeColor() {
         buttonText = "NEXT"
-    
+        
         switch brightLight {
-    
         case .red:
             redColor = ColorCircle(color: .red, opacity: lightIsOn)
             greenColor = ColorCircle(color: .green, opacity: lightIsOff)
@@ -71,24 +74,12 @@ struct TrafficLightView: View {
             greenColor = ColorCircle(color: .green, opacity: lightIsOn)
             brightLight = .red
         }
-        
-        
+    }
+    
 }
-
-}
-
-
-
-
-
-
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         TrafficLightView()
     }
 }
-
-
