@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40C3C23266A9BC600E7F91A /* ChangeColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C3C22266A9BC600E7F91A /* ChangeColorButton.swift */; };
 		C4E414682665821B001EBB74 /* TrafficLightOnSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E414672665821B001EBB74 /* TrafficLightOnSwiftUIApp.swift */; };
 		C4E4146A2665821B001EBB74 /* TrafficLightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E414692665821B001EBB74 /* TrafficLightView.swift */; };
 		C4E4146C2665821C001EBB74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4E4146B2665821C001EBB74 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C40C3C22266A9BC600E7F91A /* ChangeColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeColorButton.swift; sourceTree = "<group>"; };
 		C4E414642665821B001EBB74 /* TrafficLightOnSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafficLightOnSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4E414672665821B001EBB74 /* TrafficLightOnSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightOnSwiftUIApp.swift; sourceTree = "<group>"; };
 		C4E414692665821B001EBB74 /* TrafficLightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				C4E414672665821B001EBB74 /* TrafficLightOnSwiftUIApp.swift */,
 				C4E414692665821B001EBB74 /* TrafficLightView.swift */,
+				C40C3C22266A9BC600E7F91A /* ChangeColorButton.swift */,
 				C4E41476266590A7001EBB74 /* ColorCircle.swift */,
 				C4E4146B2665821C001EBB74 /* Assets.xcassets */,
 				C4E414702665821C001EBB74 /* Info.plist */,
@@ -144,6 +147,7 @@
 				C4E4146A2665821B001EBB74 /* TrafficLightView.swift in Sources */,
 				C4E414682665821B001EBB74 /* TrafficLightOnSwiftUIApp.swift in Sources */,
 				C4E41477266590A7001EBB74 /* ColorCircle.swift in Sources */,
+				C40C3C23266A9BC600E7F91A /* ChangeColorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

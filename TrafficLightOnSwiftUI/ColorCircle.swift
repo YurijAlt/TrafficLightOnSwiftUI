@@ -14,10 +14,9 @@ struct ColorCircle: View {
     
     var body: some View {
         Circle()
-            .foregroundColor(color
-                                .opacity(opacity))
-            .frame(height: 140)
-            .clipShape(Circle())
+            .foregroundColor(color)
+            .opacity(opacity)
+            .frame(width: 140, height: 140)
             .overlay(Circle().stroke(Color.white, lineWidth: 5))
             .shadow(color: .white, radius: 8)
     }
@@ -26,7 +25,7 @@ struct ColorCircle: View {
 struct ColorCircle_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color(.black)
+            Color(.darkGray)
                 .ignoresSafeArea()
             ColorCircle(color: .red, opacity: 1.0)
         }

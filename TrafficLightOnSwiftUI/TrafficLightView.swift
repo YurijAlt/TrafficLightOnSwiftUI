@@ -14,65 +14,55 @@ enum TrafficLightColors {
 }
 
 struct TrafficLightView: View {
-    
-    private let lightIsOn = 1.0
-    private let lightIsOff = 0.5
-    
-    @State private var redColor = ColorCircle(color: .red, opacity: 0.5)
-    @State private var yellowColor = ColorCircle(color: .yellow, opacity: 0.5)
-    @State private var greenColor = ColorCircle(color: .green, opacity: 0.5)
-    
     @State private var buttonText = "START"
+    
+    @State private var redColorState = 0.5
+    @State private var yellowColorState = 0.5
+    @State private var greenColorState = 0.5
     
     @State private var brightLight = TrafficLightColors.red
 
-    
     var body: some View {
         ZStack {
             Color(.darkGray)
                 .ignoresSafeArea()
             VStack(spacing: 30) {
-                redColor
-                yellowColor
-                greenColor
-                Spacer()
-                startButton
+                ColorCircle(color: .red, opacity: redColorState)
+                ColorCircle(color: .yellow, opacity: yellowColorState)
+                ColorCircle(color: .green, opacity: greenColorState)
                 
+                Spacer()
+                
+                ChangeColorButton(title: buttonText) {
+                    if buttonText == "START" {
+                        buttonText = "NEXT"
+                    }
+                    changeColor()
+                }
+                .padding(.bottom, 40)
             }
-            .padding(.top, 10)
+            .padding(.top, 20)
         }
     }
-    //MARK: - Start Button Setup
-    private var startButton: some View {
-        Button(action: { changeColor() }) {
-            Text("\(buttonText)")
-        }
-        .frame(width: 140.0, height: 63.0)
-        .background(Color(.white))
-        .border(Color.white, width: 1)
-        .cornerRadius(15)
-        .foregroundColor(.black)
-        .font(.system(size: 30))
-        .padding(.bottom, 40)
-        
-    }
+
     //MARK: - Private Methods
     private func changeColor() {
-        buttonText = "NEXT"
+        let lightIsOn = 1.0
+        let lightIsOff = 0.5
         
         switch brightLight {
         case .red:
-            redColor = ColorCircle(color: .red, opacity: lightIsOn)
-            greenColor = ColorCircle(color: .green, opacity: lightIsOff)
             brightLight = .yellow
+            greenColorState = lightIsOff
+            redColorState = lightIsOn
         case .yellow:
-            redColor = ColorCircle(color: .red, opacity: lightIsOff)
-            yellowColor = ColorCircle(color: .yellow, opacity: lightIsOn)
             brightLight = .green
+            redColorState = lightIsOff
+            yellowColorState = lightIsOn
         case .green:
-            yellowColor = ColorCircle(color: .yellow, opacity: lightIsOff)
-            greenColor = ColorCircle(color: .green, opacity: lightIsOn)
             brightLight = .red
+            greenColorState = lightIsOn
+            yellowColorState = lightIsOff
         }
     }
     
